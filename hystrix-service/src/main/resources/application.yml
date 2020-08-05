@@ -1,0 +1,14 @@
+server:
+  port: 8203
+spring:
+  application:
+    name: hystrix-service
+eureka:
+  client:
+    fetch-registry: true
+    register-with-eureka: true
+    service-url:
+      defaultZone: http://zyz:123456@replica1:8002/eureka/,http://tt:123@replica2:8003/eureka/
+
+service-url:
+  user-service: http://user-server

@@ -1,11 +1,12 @@
 server:
-  port: 8004
+  port: 8006
 eureka:
   client:
     fetch-registry: true
     register-with-eureka: true
     service-url:
-      defaultZone: http://localhost:8001/eureka/
+      defaultZone: http://zyz:123456@replica1:8002/eureka/,http://tt:123@replica2:8003/eureka/
+#      defaultZone: http://localhost:8001/eureka/
 spring:
   application:
     name: eureka-client
