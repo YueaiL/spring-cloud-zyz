@@ -10,5 +10,16 @@ eureka:
     service-url:
       defaultZone: http://zyz:123456@replica1:8002/eureka/,http://tt:123@replica2:8003/eureka/
 
+
 service-url:
   user-service: http://user-server
+
+#  endpoint:
+#    web:
+#      exposure:
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+#        include: "hystrix.stream" #暴露hystrix监控端点

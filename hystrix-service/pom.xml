@@ -32,6 +32,13 @@
             <artifactId>hutool-all</artifactId>
             <version>5.3.5</version>
         </dependency>
+
+        <!-- spring boot actuator 依赖 -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
+        </dependency>
+
     </dependencies>
 
     <build>
