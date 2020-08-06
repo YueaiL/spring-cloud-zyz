@@ -9,6 +9,7 @@
         <module name="hystrix-service" />
         <module name="eureka-client" />
         <module name="user-service" />
+        <module name="eureka-server" />
         <module name="ribbon-service" />
       </profile>
     </annotationProcessing>

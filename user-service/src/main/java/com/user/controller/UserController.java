@@ -5,7 +5,11 @@ import com.user.entity.User;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;
+import org.springframework.util.CollectionUtils;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * @program:springcloudzyz
@@ -28,5 +32,15 @@ public class UserController {
     public CommonResult<User> getUser(@PathVariable Integer id){
         log.warn("请求进入了"+id);
         return new CommonResult<User>(new User(id, "zyz", "123456"));
+    }
+
+    @GetMapping("/getUserByIds")
+    public CommonResult<List<User>> getUserByIds(@RequestParam List<Integer> ids){
+        ArrayList<User> users = new ArrayList<>();
+        for (int i = 0; i < ids.size(); i++) {
+            users.add(new User(ids.get(i), "zyz"+i, "password"+i));
+        }
+        log.info("根据ids获取用户信息，用户列表为：{}",users);
+        return new CommonResult<>(users);
     }
 }
