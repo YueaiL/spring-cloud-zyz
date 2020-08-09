@@ -1,0 +1,17 @@
+server:
+  port: 8901
+spring:
+  application:
+    name: config-server
+  cloud:
+    config:
+      server:
+        git: #配置存储配置信息的Git仓库
+          uri: https://github.com/YueaiL/cloud-config.git
+          username: 1070947245@qq.com
+          password: a1070947245
+          clone-on-start: true #开启启动时直接从git获取配置
+eureka:
+  client:
+    service-url:
+      defaultZone: http://zyz:123456@replica1:8002/eureka/,http://tt:123@replica2:8003/eureka/
